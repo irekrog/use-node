@@ -1,0 +1,56 @@
+{
+  "name": "use-node",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=18.14.0"
+  },
+  "private": false,
+  "main": "./dist/index.js",
+  "author": {
+    "email": "irekfrontend@gmail.com",
+    "name": "@irekrog"
+  },
+  "types": "./dist/index.d.ts",
+  "module": "./dist/index.mjs",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "build:watch": "tsup --watch",
+    "local-package": "yalc publish"
+  },
+  "keywords": [
+    "react",
+    "next",
+    "next.js",
+    "nextjs",
+    "rsc",
+    "hooks"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "directory": "https://github.com/irekrog/use-node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/irekrog/use-node/issues"
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@types/node": "18.15.0",
+    "prettier": "^2.8.4",
+    "tsup": "^6.6.0",
+    "typescript": "^4.9.5"
+  },
+  "peerDependencies": {
+    "next": "^13.2.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
