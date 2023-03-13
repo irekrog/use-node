@@ -5,6 +5,7 @@
 This is a hook working with [React Server Component (RSC)](https://beta.nextjs.org/docs/rendering/server-and-client-components#server-components) and [Next.js with App Router](https://beta.nextjs.org/docs/app-directory-roadmap).
 
 ## Getting Started
+
 ```bash
 npm install use-node
 ```
@@ -31,12 +32,8 @@ export default async function App() {
   const process = await useNode("node:process");
   console.log("env", process.env.NODE_ENV); // server log
 
-  return (
-    <div>
-      {/* pass this to the Client Component */}
-      <ClientComponent data={process.env.NODE_ENV} />{" "}
-    </div>
-  );
+  // pass this to the Client Component
+  return <ClientComponent data={process.env.NODE_ENV} />;
 }
 ```
 
@@ -45,7 +42,7 @@ export default async function App() {
 ### `useNode`
 
 ```ts
-useNode(module: Modules)
+const data = await useNode(module: Modules)
 ```
 
 #### Possible modules
