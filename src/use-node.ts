@@ -22,13 +22,10 @@ type Modules =
   | "node:process"
   | "node:querystring"
   | "node:readline"
-  | "node:readline/promises"
   | "node:repl"
   | "node:stream/promises"
-  | "node:stream/consumers"
   | "node:stream/web"
   | "node:string_decoder"
-  | "node:test"
   | "node:timers"
   | "node:timers/promises"
   | "node:tls"
@@ -88,20 +85,14 @@ type ModuleToType<T extends Modules> = T extends "node:async_hooks"
   ? typeof import("node:querystring")
   : T extends "node:readline"
   ? typeof import("node:readline")
-  : T extends "node:readline/promises"
-  ? typeof import("node:readline/promises")
   : T extends "node:repl"
   ? typeof import("node:repl")
   : T extends "node:stream/promises"
   ? typeof import("node:stream/promises")
-  : T extends "node:stream/consumers"
-  ? typeof import("node:stream/consumers")
   : T extends "node:stream/web"
   ? typeof import("node:stream/web")
   : T extends "node:string_decoder"
   ? typeof import("node:string_decoder")
-  : T extends "node:test"
-  ? typeof import("node:test")
   : T extends "node:timers"
   ? typeof import("node:timers")
   : T extends "node:timers/promises"
@@ -152,13 +143,10 @@ const moduleMap: Record<Modules, () => Promise<ModuleToType<Modules>>> = {
   "node:process": () => import("node:process"),
   "node:querystring": () => import("node:querystring"),
   "node:readline": () => import("node:readline"),
-  "node:readline/promises": () => import("node:readline/promises"),
   "node:repl": () => import("node:repl"),
   "node:stream/promises": () => import("node:stream/promises"),
-  "node:stream/consumers": () => import("node:stream/consumers"),
   "node:stream/web": () => import("node:stream/web"),
   "node:string_decoder": () => import("node:string_decoder"),
-  "node:test": () => import("node:test"),
   "node:timers": () => import("node:timers"),
   "node:timers/promises": () => import("node:timers/promises"),
   "node:tls": () => import("node:tls"),
