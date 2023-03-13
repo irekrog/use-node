@@ -89,3 +89,8 @@ type Modules =
   | "node:worker_threads"
   | "node:zlib";
 ```
+
+## Example
+https://github.com/irekrog/rsc-server-data-example/blob/master/src/app/use-node/page.tsx
+
+https://rsc-server-data-example.vercel.app/use-node
